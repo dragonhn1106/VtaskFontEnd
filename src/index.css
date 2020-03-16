@@ -1,0 +1,120 @@
+:root {
+  --gray-bg: #f7f7f7;
+}
+
+body {
+  margin: 0;
+
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+*:not(.fa) {
+  font-family: "Roboto", sans-serif !important;
+  font-size: 13px;
+}
+
+small {
+  font-size: 80% !important;
+}
+
+code {
+  font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New",
+    monospace;
+}
+
+.d-block {
+  display: block;
+}
+
+.text-center {
+  text-align: center;
+}
+
+a.brand {
+  background-color: #e5e5e5;
+  height: 55px;
+  padding-top: 2px;
+  box-sizing: border-box;
+}
+
+a.brand img {
+  max-height: 90%;
+}
+
+.icon-add2 {
+  position: relative;
+}
+
+.icon-add2::before {
+  content: "+";
+  font-size: 35px;
+  line-height: 10px;
+  position: absolute;
+  right: 0;
+}
+
+.none-decoration {
+  text-decoration: none;
+}
+
+.pull-right {
+  float: right;
+}
+
+.gray-bg {
+  background-color: var(--gray-bg);
+}
+
+.text-green {
+  color: rgb(49, 181, 134);
+}
+.btn-warning {
+  border-color: #ff7500f2 !important;
+  background: #ff7500f2 !important;
+  color: #fff !important;
+}
+
+table .text-warning {
+  color: #ff7500f2 !important;
+}
+
+.table tbody + tbody {
+  border-top: none !important;
+}
+
+.text-orange {
+  color: #ff7500f2 !important;
+}
+
+.none-decoration:hover {
+  text-decoration: none;
+}
+
+.dep-ic {
+  border-radius: 100%;
+  border: 1px solid #9d9da773;
+}
+
+.dep-ic:hover {
+  border: 1px solid #3dbce273;
+}
+
+.not-outline-focus:focus {
+  outline: none !important;
+}
+.btn-rounded {
+  border: none;
+  background-color: #e4e4e4;
+  border-radius: 20px;
+  padding: 4px 15px;
+  font-weight: 500;
+}
+
+.btn-rounded:focus {
+  outline: none !important;
+}
+
+.has-border-right {
+  border-right: 1px solid #ccc;
+}

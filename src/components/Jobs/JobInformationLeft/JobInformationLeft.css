@@ -1,0 +1,49 @@
+.JobInformationLeft__header {
+  padding: 22px 21px 22px 35px;
+  background-color: #fff;
+  height: 65px;
+  width: calc((100% - 80px) * 3 / 12);
+  position: fixed;
+  top: 55px;
+  border-right: 1px solid #c7c7c7;
+  border-bottom: 1px solid #e2d7d7;
+  z-index: 100;
+}
+
+.JobInformationLeft__header h1 {
+  font-size: 18px;
+}
+
+.JobInformationLeft__header2 {
+  height: 40px;
+  margin-top: 65px;
+  position: relative;
+}
+
+.JobInformationLeft .job_information {
+  margin-top: -20px;
+}
+.JobInformationLeft .progress-title {
+  color: #a09f9f;
+  font-weight: 600;
+  position: relative;
+}
+
+.JobInformationLeft .progress-title::after {
+  position: absolute;
+  width: 72%;
+  height: 1px;
+  content: "";
+  background-color: #e2dddd;
+  bottom: 8px;
+  right: 0;
+}
+
+.JobInformationLeft .tong-so-nguoi-tham-gia .user-n {
+  width: 10%;
+  height: auto;
+}
+
+.JobInformationLeft .tong-so-nguoi-tham-gia img {
+  width: 100%;
+}

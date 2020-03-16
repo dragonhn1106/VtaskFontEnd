@@ -1,0 +1,71 @@
+.JobProgressBar .progress-line {
+  width: 98%;
+  height: 15px;
+  margin: 5px 5px;
+  background-color: #eeeeee;
+  border-radius: 10px;
+  position: relative;
+  margin-right: 5px !important;
+}
+
+.JobProgressBar .progress-line::after {
+  position: absolute;
+  content: "";
+  width: var(--progressbar-percent);
+  height: 100%;
+  background-repeat: repeat !important;
+  background-color: #03b62c !important;
+  background-image: linear-gradient(
+    45deg,
+    rgba(255, 255, 255, 0.15) 25%,
+    transparent 25%,
+    transparent 50%,
+    rgba(255, 255, 255, 0.15) 50%,
+    rgba(255, 255, 255, 0.15) 75%,
+    transparent 75%,
+    transparent
+  ) !important;
+  background-size: 1rem 1rem !important;
+  border-top-left-radius: 10px;
+  border-bottom-left-radius: 10px;
+  left: 0;
+}
+
+.JobProgressBar .progress-line::before {
+  position: absolute;
+  content: "";
+  left: calc(var(--now-percent) - 7px);
+  width: 15px;
+  height: 100%;
+  border-radius: 100%;
+  background-color: #f1902c;
+}
+
+.JobProgressBar .now {
+  width: 70px;
+  text-align: center;
+  margin-left: calc(var(--now-percent) - 35px);
+  position: relative;
+  margin-top: 30px;
+}
+
+.JobProgressBar .now::before {
+  position: absolute;
+  content: "";
+  height: 20px;
+  width: 1px;
+  left: calc(50% - 1px);
+  background-color: #9e9898;
+  top: -55%;
+}
+
+.JobProgressBar-top {
+  position: relative;
+}
+
+.JobProgressBar-top .real {
+  position: absolute;
+  left: calc(var(--progressbar-percent) - 10px);
+  color: red;
+  bottom: 0;
+}
