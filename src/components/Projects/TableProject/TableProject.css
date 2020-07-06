@@ -58,3 +58,40 @@
 .TableProject tr:focus {
   outline: none!important;
 }
+
+.chat-box-col-right{
+  height: calc(100vh - 65px - 55px  - 50px);
+  background-color: #bcbcbc;
+  overflow: auto;
+}
+.box-input-chat{
+  height: 50px;
+}
+.box-input-chat textarea.textareaAutosize{
+  height: 100% !important;
+  font-size: 14px;
+  resize: none;
+  padding-right: 100px;
+}
+.box-input-chat textarea:focus{
+  outline: none;
+  border: none;
+  box-shadow: none;
+  color: black;
+  
+}
+.chat-box-col-right .box-chart-user, .box-chart-guest{
+  margin-top: 20px;
+}
+.chat-box-col-right .box-chart-user .boxMessage {
+ padding: 20px;
+ background-color: #fff;
+ margin-left: 5px;
+ border-radius: 5px;
+}
+.chat-box-col-right .box-chart-guest .boxMessage{
+  padding: 20px;
+ background-color: #fff;
+ margin-right: 5px;
+ border-radius: 5px;
+}

@@ -4,7 +4,7 @@ import MainRight from "./../../components/common/MainRight/MainRight";
 
 class ProjectPage extends Component {
   componentDidMount() {
-    document.title = "Dự án";
+    document.title = "Tin nhắn";
   }
   render() {
     return (

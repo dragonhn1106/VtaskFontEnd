@@ -29,33 +29,9 @@ class LeftCol extends Component {
         <div className="d-flex flex-column justify-content-between left-icon">
           <div className="LeftColItem d-block text-center">
             <div className="Items">
-              <Link to="/" className="LeftNavLink">
-                <Icon path={mdiViewDashboard} size={1.5} color={"#fff"} />
-                <div className="Item">Trang chủ </div>
-              </Link>
-            </div>
-            <div className="Items">
-              <Link to="/du-an" className="LeftNavLink">
+              <Link to="/tin-nhan" className="LeftNavLink">
                 <Icon path={mdiApps} size={1.5} color={"#fff"} />
-                <div className="Item">Dự án</div>
-              </Link>
-            </div>
-            <div className="Items">
-              <Link to="/cong-viec" className="LeftNavLink">
-                <Icon path={mdiBallotOutline} size={1.5} color={"#fff"} />
-                <div className="Item">Công việc</div>
-              </Link>
-            </div>
-            <div className="Items">
-              <Link to="/bao-cao" className="LeftNavLink">
-                <Icon path={mdiEqualizer} size={1.5} color={"#fff"} />
-                <div className="Item">Báo cáo</div>
-              </Link>
-            </div>
-            <div className="Items">
-              <Link to="/tai-lieu" className="LeftNavLink">
-                <Icon path={mdiFolderMultipleOutline} size={1.5} color={"#fff"} />
-                <div className="Item">Tài liệu</div>
+                <div className="Item">Tin Nhắn</div>
               </Link>
             </div>
             <div className="Items">

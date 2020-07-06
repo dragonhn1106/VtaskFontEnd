@@ -8,6 +8,7 @@ import { connect } from "react-redux";
 import { List } from "react-movable";
 import { dragProjectGroup } from "../../../actions";
 import { mdiDragVertical } from "@mdi/js";
+import { NavLink } from "react-router-dom";
 
 class ListProjectGroup extends Component {
   state = {
@@ -21,10 +22,6 @@ class ListProjectGroup extends Component {
   closeDepartmentModal = () => {
     this.setState({ showDepartment: false });
   };
-  showIconModal = e => {
-    e.preventDefault();
-    this.setState({ showDepartment: false, showIcon: true });
-  };
   closeIconModal = () => {
     this.setState({ showIcon: false });
   };
@@ -33,7 +30,7 @@ class ListProjectGroup extends Component {
     return (
       <div className="ListProjectGroup">
         <div className="ListProjectGroup__header">
-          <span>NHÓM DỰ ÁN</span>
+          <span>Thêm cuộc hội thoại mới</span>
           <a
             href="/"
             className="none-decoration pull-right"
@@ -43,7 +40,7 @@ class ListProjectGroup extends Component {
           </a>
         </div>
         <div className="mainleft__header2 gray-bg">
-          <strong>Tất cả</strong> &nbsp;<small>(21 dự án)</small>
+          <strong>Tất cả</strong> &nbsp;<small>(21 Cuộc hội thoại)</small>
         </div>
 
         {/* List Department  */}
@@ -77,7 +74,10 @@ class ListProjectGroup extends Component {
               }}
               className="department-icon not-outline-focus"
             >
-              <div
+              <NavLink
+                to="/tin-nhan"
+                className="nav-link"
+                // avtiveClassName="selected"
                 style={{
                   display: "flex",
                   alignItems: "center"
@@ -100,137 +100,38 @@ class ListProjectGroup extends Component {
                   height="45"
                 />
                 <div className="ml-3">
-                  {value.name} <small>({value.projectCount} dự án)</small>
+                  {value.name} <small>({value.projectCount})</small>
                 </div>
-              </div>
+              </NavLink>
             </li>
           )}
         />
-        <div
-          style={{
-            padding: "8px 15px"
-          }}
-          className="department-icon"
-        >
-          <div
-            style={{
-              display: "flex",
-              alignItems: "center"
-            }}
-          >
-            <span style={{ visibility: "hidden" }}>
-              <Icon path={mdiDragVertical} size={1} />
-            </span>
-            <img
-              alt="dep-ic"
-              className="dep-ic"
-              src={depIc}
-              width="45"
-              height="45"
-            />
-            <div className="ml-3">
-              Nhóm mặc định <small>(30 dự án)</small>
-            </div>
-          </div>
-        </div>
-
         {/* Modal Add  Department */}
         <Modal
           show={this.state.showDepartment}
           onHide={this.closeDepartmentModal}
         >
           <Modal.Header closeButton>
-            <span>Tạo nhóm dự án</span>
+            <span>Tạo cuộc hội thoại mới</span>
           </Modal.Header>
           <Modal.Body>
             <div className="form-group mt-3">
               <div className="label d-flex justify-content-between">
-                <label>Tên nhóm dự án</label>
+                <label>Tên người dùng</label>
                 <i className="text-danger">(Tối đa 150 ký tự)</i>
               </div>
               <input type="text" className="form-control input-modal" />
             </div>
             <div className="form-group mt-5">
               <div className="label d-flex justify-content-between">
-                <label>Mô tả nhóm dự án</label>
-                <i className="text-danger">(Tối đa 150 ký tự)</i>
+                <label>Nội dung tin nhắn</label>
+                <i className="text-danger">Bạn chưa nhập nội dung</i>
               </div>
               <input type="text" className="form-control input-modal" />
             </div>
-            <div className="form-group d-flex justify-content-between mb-5">
-              <div>
-                <p>Biểu tượng nhóm</p>
-                <a href="/" onClick={this.showIconModal}>
-                  Thay đổi
-                </a>
-              </div>
-              <img src={require("../../../assets/dep-ic.png")} alt="icon" />
-            </div>
           </Modal.Body>
           <Modal.Footer>
-            <button className="submit-modal">HOÀN THÀNH</button>
-          </Modal.Footer>
-        </Modal>
-
-        {/* Modal select department icon */}
-        <Modal
-          show={this.state.showIcon}
-          onHide={this.closeIconModal}
-          size="sm"
-        >
-          <Modal.Header closeButton>
-            <span>Chọn biểu tượng</span>
-          </Modal.Header>
-          <Modal.Body>
-            <span>Chọn biểu tượng có sẵn</span>
-            <div className="d-flex flex-wrap icon-block">
-              <div className="items-ic">
-                <img src={require("../../../assets/dep-ic.png")} alt="" />
-                <div className="text-center">
-                  <input
-                    className=""
-                    type="radio"
-                    name="icon-selected"
-                    defaultChecked
-                  />
-                </div>
-              </div>
-              <div className="items-ic">
-                <img src={require("../../../assets/dep-ic.png")} alt="" />
-                <div className="text-center">
-                  <input className="" type="radio" name="icon-selected" />
-                </div>
-              </div>
-              <div className="items-ic">
-                <img src={require("../../../assets/dep-ic.png")} alt="" />
-                <div className="text-center">
-                  <input className="" type="radio" name="icon-selected" />
-                </div>
-              </div>
-              <div className="items-ic">
-                <img src={require("../../../assets/dep-ic.png")} alt="" />
-                <div className="text-center">
-                  <input className="" type="radio" name="icon-selected" />
-                </div>
-              </div>
-            </div>
-            <div className="d-flex justify-content-md-between mt-2">
-              <span>Biểu tượng có sẵn</span>
-              <a href="/">
-                <small>+ Thêm mới</small>
-              </a>
-            </div>
-            <div className="d-flex flex-wrap">
-              <div className="items-ic">
-                <img src={require("../../../assets/dep-ic.png")} alt="" />
-                <div className="text-center">
-                  <input className="" type="radio" />
-                </div>
-              </div>
-            </div>
-          </Modal.Body>
-          <Modal.Footer>
-            <button className="submit-modal">HOÀN THÀNH</button>
+            <button className="submit-modal text-uppercase">Hoàn thành</button>
           </Modal.Footer>
         </Modal>
       </div>
