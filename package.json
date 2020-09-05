@@ -13,7 +13,7 @@
     "chartjs-plugin-datalabels": "0.7.0",
     "font-awesome": "4.7",
     "jquery": "3.4.1",
-    "node-sass": "4.12.0",
+    "node-sass": "4.13.1",
     "react": "16.9.0",
     "react-beautiful-dnd": "11.0.5",
     "react-bootstrap": "1.0.0-beta.12",
